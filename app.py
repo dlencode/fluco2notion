@@ -10,7 +10,6 @@ app = Flask(__name__)
 def trackWeather(token, URL, weather):
     # notion
     client = NotionClient(token_v2=token)
-    print(client)
     block = client.get_block(URL)
     block.title = weather
 
@@ -100,8 +99,9 @@ def getWeather():
     weather = str(request.args.get('weather'))
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
-    trackWeather(token_v2, url, weather)
-    return f'added {weather} to Notion'
+    print(weather, token_v2, url)
+    # trackWeather(token_v2, url, weather)
+    # return f'added {weather} to Notion'
 
 
 if __name__ == '__main__':
