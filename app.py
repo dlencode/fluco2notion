@@ -10,6 +10,7 @@ app = Flask(__name__)
 def trackWeather(token, URL, weather):
     # notion
     client = NotionClient(token_v2=token)
+    print(client)
     block = client.get_block(URL)
     block.title = weather
 
