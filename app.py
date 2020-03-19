@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 def trackWeather(token, URL, weather):
     # notion
-    client = NotionClient(token_v2=token)
-    block = client.get_block(URL)
+    client = NotionClient(token_v2="a46654d8d6459ab8b82ea9e60f831870e86152e752ef47099ef51893b5e3b59ccad5241ad02a9dc6ad4d897ba24ce1616d06d9c8174d84d657a5d8c4347460ed66c6cf71914adbdada3f4497ca62")
+    block = client.get_block("https://www.notion.so/fluco/Test-Heroku-d78610c1a5aa4a129cb509f5eecec7f7#472993c88905453c9f8ca81ac3c08f0e")
     block.title = weather
 
 def createTweet(token, collectionURL, tweet, author, followers):
@@ -99,11 +99,8 @@ def getWeather():
     weather = str(request.args.get('weather'))
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
-    str("Weather is " + weather)
-    str("Token: " + token_v2)
-    str("URL: " + url)
-    # trackWeather(token_v2, url, weather)
-    # return f'added {weather} to Notion'
+    trackWeather(token_v2, url, weather)
+    return f'added {weather} to Notion'
 
 
 if __name__ == '__main__':
