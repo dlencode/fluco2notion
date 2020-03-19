@@ -99,7 +99,9 @@ def getWeather():
     weather = str(request.args.get('weather'))
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
-    print(weather, token_v2, url)
+    print("Weather is " + weather)
+    print("Token: " + token_v2)
+    print("URL: " + url)
     # trackWeather(token_v2, url, weather)
     # return f'added {weather} to Notion'
 
