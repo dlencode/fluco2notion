@@ -96,12 +96,12 @@ def gmailUrgentEmail():
 
 @app.route('/getweather', methods=['GET'])
 def getWeather():
-    weather = str(request.args.get('weather'))
-    token_v2 = os.environ.get("TOKEN")
-    url = os.environ.get("URL")
-    print(token_v2, url, weather)
-    trackWeather(token_v2, url, weather)
-    return f'added {weather} to Notion'
+    return print("Some tests")
+    # weather = str(request.args.get('weather'))
+    # token_v2 = os.environ.get("TOKEN")
+    # url = os.environ.get("URL")
+    # trackWeather(token_v2, url, weather)
+    # return f'added {weather} to Notion'
 
 
 if __name__ == '__main__':
